@@ -19,8 +19,8 @@ h1 {
 }
 
 input[type="date"],
-input[type="text"] {
-  width: 100%;
+input[type="text"],
+input[type="time"] {
   padding: 12px;
   margin: 8px 0;
   border-radius: 10px;
@@ -28,9 +28,19 @@ input[type="text"] {
   font-size: 16px;
 }
 
+input[type="date"],
+input[type="time"] {
+  width: 120px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+}
+
 .add {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .add button {
@@ -40,6 +50,7 @@ input[type="text"] {
   border: none;
   background: #007aff;
   color: white;
+  cursor: pointer;
 }
 
 ul {
@@ -66,4 +77,5 @@ li {
   border: none;
   background: none;
   font-size: 18px;
+  cursor: pointer;
 }
