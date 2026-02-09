@@ -1,16 +1,16 @@
-const timeInput = document.getElementById('time');
-
-if ('Notification' in window) {
-  Notification.requestPermission();
-}
 const dateInput = document.getElementById('date');
 const taskInput = document.getElementById('task');
+const timeInput = document.getElementById('time');
 const list = document.getElementById('list');
 
 dateInput.valueAsDate = new Date();
 loadTasks();
 
 dateInput.addEventListener('change', loadTasks);
+
+if ('Notification' in window) {
+  Notification.requestPermission();
+}
 
 function storageKey() {
   return 'tasks-' + dateInput.value;
@@ -19,19 +19,19 @@ function storageKey() {
 function loadTasks() {
   list.innerHTML = '';
   const tasks = JSON.parse(localStorage.getItem(storageKey())) || [];
-if (tasks.length === 0) {
-  list.innerHTML = '<li>📭 Дел на эту дату нет</li>';
-  return;
-}
+
+  if (tasks.length === 0) {
+    list.innerHTML = '<li>📭 Дел на эту дату нет</li>';
+    return;
+  }
 
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
 
     const span = document.createElement('span');
     span.textContent = task.time
-  ? `${task.time} — ${task.text}`
-  : task.text;
-
+      ? `${task.time} — ${task.text}`
+      : task.text;
     if (task.done) span.classList.add('done');
     span.onclick = () => toggleTask(index);
 
@@ -70,7 +70,6 @@ function addTask() {
   timeInput.value = '';
   loadTasks();
 }
-
 
 function toggleTask(index) {
   const tasks = JSON.parse(localStorage.getItem(storageKey()));
