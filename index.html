@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Мои дела</title>
-
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
+  <div class="app">
+    <h1>📋 Мои дела</h1>
 
-<div class="add">
-  <input type="text" id="task" placeholder="Новое дело">
-  <input type="time" id="time">
-  <button onclick="addTask()">＋</button>
-</div>
+    <input type="date" id="date" />
 
+    <div class="add">
+      <input type="text" id="task" placeholder="Новое дело" />
+      <input type="time" id="time" />
+      <button onclick="addTask()">＋</button>
+    </div>
 
-  <ul id="list"></ul>
-</div>
+    <ul id="list"></ul>
+  </div>
 
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
