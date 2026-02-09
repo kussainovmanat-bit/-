@@ -10,15 +10,12 @@
 </head>
 <body>
 
-<div class="app">
-  <h1>📋 Мои дела</h1>
+<div class="add">
+  <input type="text" id="task" placeholder="Новое дело">
+  <input type="time" id="time">
+  <button onclick="addTask()">＋</button>
+</div>
 
-  <input type="date" id="date">
-
-  <div class="add">
-    <input type="text" id="task" placeholder="Новое дело">
-    <button onclick="addTask()">＋</button>
-  </div>
 
   <ul id="list"></ul>
 </div>
